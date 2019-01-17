@@ -15,19 +15,32 @@ namespace Notes_V2
 {
     public class PlayQuoteFragment : Fragment
     {
-        public override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
+        public int PlayID => Arguments.GetInt("current_play_id", 0);
 
-            // Create your fragment here
+        public static PlayQuoteFragment NewInstance(int PlayID)
+        {
+            var bundle = new Bundle();
+            bundle.PutInt("current_play_id", PlayID);
+            return new PlayQuoteFragment { Arguments = bundle };
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            // Use this to return your custom view for this Fragment
-            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
+            if (container == null)
+            {
+                return null;
+            }
 
-            return base.OnCreateView(inflater, container, savedInstanceState);
+            var textView = new TextView(Activity);
+            var padding = Convert.ToInt32(TypedValue.ApplyDimension(ComplexUnitType.Dip, 4, Activity.Resources.DisplayMetrics));
+            textView.SetPadding(padding, padding, padding, padding);
+            textView.TextSize = 24;
+            textView.Text = NotesDate.Dialogue[PlayID];
+
+            var scroller = new ScrollView(Activity);
+            scroller.AddView(textView);
+
+            return scroller;
         }
     }
 }

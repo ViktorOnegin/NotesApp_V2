@@ -9,34 +9,12 @@
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:layout_width="384.0dp"
-		android:layout_height="530.0dp"
+		android:layout_height="550.5dp"
 		android:id="@+id/linearLayout1">
-		<LinearLayout
-			android:orientation="horizontal"
-			android:minWidth="25px"
-			android:minHeight="25px"
+		<fragment
+			android:name="Notes_V2.TitleFragment"
 			android:layout_width="match_parent"
-			android:layout_height="48.5dp"
-			android:id="@+id/linearLayout2" >
-			<EditText
-				android:text=""
-				android:hint="Title"
-				android:textAppearance="?android:attr/textAppearanceLarge"
-				android:layout_width="239.5dp"
-				android:layout_height="match_parent"
-				android:id="@+id/textView1" />
-			<Button
-				android:text="Add"
-				android:layout_width="138.5dp"
-				android:layout_height="match_parent"
-				android:id="@+id/button1" />
-		</LinearLayout>
-		<EditText
-			android:text=""
-			android:hint="Content"
-			android:textAppearance="?android:attr/textAppearanceLarge"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/textView2" />
+			android:layout_height="549.5dp"
+			android:id="@+id/fragment1" />
 	</LinearLayout>
 </RelativeLayout>

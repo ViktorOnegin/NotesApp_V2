@@ -4,4 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+	<LinearLayout
+		android:orientation="horizontal"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="639.0dp"
+		android:layout_height="295.0dp"
+		android:id="@+id/linearLayout2">
+		<fragment
+			android:name="Notes_V2.TitleFragment"
+			android:layout_width="270.0dp"
+			android:layout_height="match_parent"
+			android:id="@+id/fragment2" />
+		<FrameLayout
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="357.0dp"
+			android:layout_height="match_parent"
+			android:id="@+id/frameLayout1" />
+	</LinearLayout>
 </RelativeLayout>

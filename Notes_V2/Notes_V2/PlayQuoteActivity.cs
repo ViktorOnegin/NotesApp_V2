@@ -19,7 +19,16 @@ namespace Notes_V2
         {
             base.OnCreate(savedInstanceState);
 
-            // Create your application here
+            if (Resources.Configuration.Orientation == Android.Content.Res.Orientation.Landscape)
+            {
+                Finish();
+            }
+
+            var playId = Intent.Extras.GetInt("current_play_id", 0);
+            var playQuoteFrag = PlayQuoteFragment.NewInstance(playId);
+            FragmentManager.BeginTransaction()
+                            .Add(Android.Resource.Id.Content, playQuoteFrag)
+                            .Commit();
         }
     }
 }

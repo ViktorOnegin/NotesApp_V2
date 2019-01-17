@@ -2429,9 +2429,6 @@ namespace Notes_V2
 			// aapt resource value: 0x7f08003d
 			public const int bottom = 2131230781;
 			
-			// aapt resource value: 0x7f08008e
-			public const int button1 = 2131230862;
-			
 			// aapt resource value: 0x7f080063
 			public const int buttonPanel = 2131230819;
 			
@@ -2540,6 +2537,15 @@ namespace Notes_V2
 			// aapt resource value: 0x7f080058
 			public const int forever = 2131230808;
 			
+			// aapt resource value: 0x7f08008c
+			public const int fragment1 = 2131230860;
+			
+			// aapt resource value: 0x7f08008e
+			public const int fragment2 = 2131230862;
+			
+			// aapt resource value: 0x7f08008f
+			public const int frameLayout1 = 2131230863;
+			
 			// aapt resource value: 0x7f08000a
 			public const int ghost_view = 2131230730;
 			
@@ -2585,8 +2591,8 @@ namespace Notes_V2
 			// aapt resource value: 0x7f08008b
 			public const int linearLayout1 = 2131230859;
 			
-			// aapt resource value: 0x7f08008c
-			public const int linearLayout2 = 2131230860;
+			// aapt resource value: 0x7f08008d
+			public const int linearLayout2 = 2131230861;
 			
 			// aapt resource value: 0x7f08001d
 			public const int listMode = 2131230749;
@@ -2791,12 +2797,6 @@ namespace Notes_V2
 			
 			// aapt resource value: 0x7f080069
 			public const int textSpacerNoTitle = 2131230825;
-			
-			// aapt resource value: 0x7f08008d
-			public const int textView1 = 2131230861;
-			
-			// aapt resource value: 0x7f08008f
-			public const int textView2 = 2131230863;
 			
 			// aapt resource value: 0x7f08009d
 			public const int text_input_password_toggle = 2131230877;

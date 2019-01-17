@@ -7,7 +7,7 @@ using Android.Widget;
 namespace Notes_V2
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity
+    public class MainActivity : Android.Support.V7.App.AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

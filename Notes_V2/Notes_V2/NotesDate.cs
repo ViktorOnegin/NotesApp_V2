@@ -14,5 +14,14 @@ namespace Notes_V2
 {
     class NotesDate
     {
+        public static string[] Titles =
+        {
+            "kool"
+        };
+
+        public static string[] Dialogue =
+        {
+            "Täna on kolm mata tundi!!!!!!!!, tra"
+        };
     }
 }
