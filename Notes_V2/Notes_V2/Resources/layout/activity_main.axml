@@ -14,7 +14,13 @@
 		<fragment
 			android:name="Notes_V2.TitleFragment"
 			android:layout_width="match_parent"
-			android:layout_height="549.5dp"
+			android:layout_height="487.5dp"
 			android:id="@+id/fragment1" />
+		<Button
+			android:text="Button"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/button1"
+			android:layout_marginRight="0.0dp" />
 	</LinearLayout>
 </RelativeLayout>

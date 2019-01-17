@@ -25,7 +25,7 @@ namespace Notes_V2
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
-            ListAdapter = new ArrayAdapter<String>(Activity, Android.Resource.Layout.SimpleListItemActivated1, NotesDate.Titles);
+            //ListAdapter = new ArrayAdapter<String>(Activity, Android.Resource.Layout.SimpleListItemActivated1, NotesDate.Titles);
 
             if (savedInstanceState != null)
             {

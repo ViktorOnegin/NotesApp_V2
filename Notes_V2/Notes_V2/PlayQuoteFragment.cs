@@ -35,7 +35,7 @@ namespace Notes_V2
             var padding = Convert.ToInt32(TypedValue.ApplyDimension(ComplexUnitType.Dip, 4, Activity.Resources.DisplayMetrics));
             textView.SetPadding(padding, padding, padding, padding);
             textView.TextSize = 24;
-            textView.Text = NotesDate.Dialogue[PlayID];
+            //textView.Text = NotesDate.Dialogue[PlayID];
 
             var scroller = new ScrollView(Activity);
             scroller.AddView(textView);
