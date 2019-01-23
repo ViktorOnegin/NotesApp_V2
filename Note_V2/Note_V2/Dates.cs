@@ -9,11 +9,15 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using SQLite;
 
 namespace Note_V2
 {
-    public class TitlesFragment : Fragment
+    public class Dates
     {
-        
+        [PrimaryKey, AutoIncrement, Column("_ID")]
+        public int ID { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
     }
 }

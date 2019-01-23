@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+       android:id="@+id/add"
+       android:icon="@mipmap/baseline_add_white_48"
+       android:showAsAction="always"
+       android:title="add" />
+
+  <item
+       android:id="@+id/back"
+       android:icon="@mipmap/baseline_reply_white_48"
+       android:showAsAction="always"
+       android:title="back" />
+</menu>

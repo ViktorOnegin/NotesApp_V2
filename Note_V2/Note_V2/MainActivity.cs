@@ -20,7 +20,6 @@ namespace ToolbarExample
 
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-            ActionBar.Title = "My toolbar";
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

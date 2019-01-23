@@ -3,10 +3,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-	<include
-		android:id="@+id/toolbar"
-		layout="@layout/toolbar"
-		android:layout_height="522.0dp" />
+	<Toolbar
+		android:minHeight="?android:attr/actionBarSize"
+		android:background="?android:attr/colorAccent"
+		android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar"
+		android:layout_width="match_parent"
+		android:layout_height="64.5dp"
+		android:id="@+id/toolbar" />
 	<LinearLayout
 		android:orientation="vertical"
 		android:minWidth="25px"
@@ -21,7 +24,7 @@
 			android:layout_height="wrap_content"
 			android:id="@+id/textView1"
 			android:layout_marginBottom="9.0dp"
-			android:layout_marginTop="3.0dp" />
+			android:layout_marginTop="4.5dp" />
 		<EditText
 			android:hint="Content"
 			android:textAppearance="?android:attr/textAppearanceLarge"
