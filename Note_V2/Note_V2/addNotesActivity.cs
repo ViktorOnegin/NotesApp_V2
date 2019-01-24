@@ -21,32 +21,40 @@ namespace Note_V2
             SetContentView(Resource.Layout.addNotes);
 
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-            toolbar.InflateMenu(Resource.Menu.top_menus2);
-            //toolbar.MenuItemClick += (sender, e) =>
-            //{
-
-            //};
+            SetActionBar(toolbar);
         }
 
-        //public override bool OnOptionsItemSelected(IMenuItem item)
-        //{
-        //    switch (item.ItemId)
-        //    {
-        //        case Resource.Id.add:
-        //            {
-        //                var startActivity = new Intent(this, typeof());
-        //                StartActivity(startActivity);
-        //                break;
-        //            }
-        //        default:
-        //            {
-        //                break;
-        //            }
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.top_menus2, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
 
-        //    }
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
 
-        //    return base.OnOptionsItemSelected(item);
-        //}
+                case Resource.Id.menu_add:
+                    {
+                        var Title = FindViewById<EditText>(Resource.Id.)
+                        break;
+                    }
+                case Resource.Id.menu_back:
+                    {
+                        var startActivity = new Intent(this, typeof(MainActivity));
+                        StartActivity(startActivity);
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
 
 
     }

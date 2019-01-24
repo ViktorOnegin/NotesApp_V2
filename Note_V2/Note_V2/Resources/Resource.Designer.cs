@@ -2420,9 +2420,6 @@ namespace Note_V2
 			// aapt resource value: 0x7f080044
 			public const int auto = 2131230788;
 			
-			// aapt resource value: 0x7f0800b7
-			public const int back = 2131230903;
-			
 			// aapt resource value: 0x7f08002f
 			public const int beginning = 2131230767;
 			
@@ -2500,6 +2497,12 @@ namespace Note_V2
 			
 			// aapt resource value: 0x7f080020
 			public const int disableHome = 2131230752;
+			
+			// aapt resource value: 0x7f08008d
+			public const int edit1 = 2131230861;
+			
+			// aapt resource value: 0x7f08008e
+			public const int edit2 = 2131230862;
 			
 			// aapt resource value: 0x7f08007e
 			public const int edit_query = 2131230846;
@@ -2599,6 +2602,9 @@ namespace Note_V2
 			
 			// aapt resource value: 0x7f0800b3
 			public const int menu_add = 2131230899;
+			
+			// aapt resource value: 0x7f0800b7
+			public const int menu_back = 2131230903;
 			
 			// aapt resource value: 0x7f0800b4
 			public const int menu_edit = 2131230900;
@@ -2800,12 +2806,6 @@ namespace Note_V2
 			
 			// aapt resource value: 0x7f080069
 			public const int textSpacerNoTitle = 2131230825;
-			
-			// aapt resource value: 0x7f08008d
-			public const int textView1 = 2131230861;
-			
-			// aapt resource value: 0x7f08008e
-			public const int textView2 = 2131230862;
 			
 			// aapt resource value: 0x7f08009c
 			public const int text_input_password_toggle = 2131230876;
