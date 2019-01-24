@@ -15,11 +15,16 @@ namespace Note_V2
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     public class addNotesActivity : Activity
     {
+        DatabaseService databaseService = new DatabaseService();
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.addNotes);
+            //DatabaseService databaseService = new DatabaseService();
 
+            var Title = FindViewById<EditText>(Resource.Id.edit1);
+            var Content = FindViewById<EditText>(Resource.Id.edit2);
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
         }
@@ -37,7 +42,7 @@ namespace Note_V2
 
                 case Resource.Id.menu_add:
                     {
-                        var Title = FindViewById<EditText>(Resource.Id.)
+                        
                         break;
                     }
                 case Resource.Id.menu_back:

@@ -14,5 +14,10 @@
 		android:layout_height="552.5dp"
 		android:layout_below="@id/toolbar"
 		android:id="@+id/linearLayout1">
+        <fragment
+            android:name="Note_V2.TitlesFragment"
+            android:layout_width="match_parent"
+            android:layout_height="537.5dp"
+            android:id="@+id/fragment1" />
 	</LinearLayout>
 </RelativeLayout>
