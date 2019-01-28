@@ -8,7 +8,7 @@ using Android.Content;
 
 namespace Note_V2
 {
-    [Activity(Label = "@string/app_name", Icon= "@drawable/Note", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Icon= "@drawable/Note", Theme = "@style/AppTheme")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

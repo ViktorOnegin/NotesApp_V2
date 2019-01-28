@@ -37,10 +37,10 @@ namespace Note_V2
         {
             db.Update(dates);
         }
-        public TableQuery<Dates> GetAllDates()
-        {
-            var table = db.Table<Dates>();
-            return table;
-        }
+        //public TableQuery<Dates> GetAllDates()
+        //{
+        //    var table = db.Table<Dates>();
+        //    return table;
+        //}
     }
 }

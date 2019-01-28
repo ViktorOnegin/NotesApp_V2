@@ -26,8 +26,8 @@ namespace Note_V2
         {
             base.OnActivityCreated(savedInstanceState);
 
-            var Title = databaseService.GetAllDates().ToList().Select(p => p.Title).ToArray();
-            ListAdapter = new ArrayAdapter<String>(Activity, Android.Resource.Layout.SimpleListItemActivated1, Title);
+            //var Title = databaseService.GetAllDates().ToList().Select(p => p.Title).ToArray();
+            //ListAdapter = new ArrayAdapter<String>(Activity, Android.Resource.Layout.SimpleListItemActivated1, Title);
 
             if (savedInstanceState != null)
             {
