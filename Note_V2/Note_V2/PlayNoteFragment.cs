@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V7.App;
 
 namespace Note_V2
 {
@@ -24,6 +25,8 @@ namespace Note_V2
             bundle.PutInt("current_play_id", playId);
             return new PlayNoteFragment { Arguments = bundle };
         }
+
+
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {

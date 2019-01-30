@@ -9,10 +9,11 @@ using SQLite;
 
 namespace Note_V2
 {
-    [Activity(Label = "@string/app_name", Icon= "@drawable/Note", Theme = "@style/AppTheme")]
+    [Activity(Label = "", Icon= "@drawable/Note", Theme = "@style/AppTheme")]
     public class MainActivity : Activity
     {
         DatabaseService databaseService = new DatabaseService();
+        
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -41,9 +42,13 @@ namespace Note_V2
                         StartActivity(startActivity);
                         break;
                     }
-
+                case Resource.Id.menu_delete:
+                    {
+                        break;
+                    }
                 default:
                     {
+                        //databaseService.Delete(dates);
                         break;
                     }
 

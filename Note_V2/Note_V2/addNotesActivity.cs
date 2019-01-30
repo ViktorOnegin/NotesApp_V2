@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 namespace Note_V2
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
+    [Activity(Label = "", Theme = "@style/AppTheme")]
     public class addNotesActivity : Activity
     {
         DatabaseService databaseService = new DatabaseService();
@@ -24,7 +24,6 @@ namespace Note_V2
             SetContentView(Resource.Layout.addNotes);
             
             databaseService.CreateDatabase();
-            //dates = JsonConvert.DeserializeObject<Dates>(Intent.GetStringExtra("dates"));
 
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
