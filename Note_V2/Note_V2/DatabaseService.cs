@@ -14,17 +14,30 @@ using SQLite;
 
 namespace Note_V2
 {
-    public class DatabaseService
+    class DatabaseService
     {
         SQLiteConnection db;
 
-        public void CreateDatabase()
+        public DatabaseService()
         {
             string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "database.db3");
             db = new SQLiteConnection(dbPath);
+        }
+        public void CreateDatabase()
+        {
             db.CreateTable<Dates>();
         }
-
+        public void CreateTableWithDates()
+        {
+            db.CreateTable<Dates>();
+            if (db.Table<Dates>().Count() ==0)
+            {
+                var dates = new Dates();
+                dates.Title = "TestTitle";
+                dates.Content = "TestContent";
+                db.Insert(dates);
+            }
+        }
         public void Add(Dates dates)
         {
             db.Insert(dates);
@@ -37,10 +50,10 @@ namespace Note_V2
         {
             db.Update(dates);
         }
-        //public TableQuery<Dates> GetAllDates()
-        //{
-        //    var table = db.Table<Dates>();
-        //    return table;
-        //}
+        public TableQuery<Dates> GetAllDates()
+        {
+            var table = db.Table<Dates>();
+            return table;
+        }
     }
 }

@@ -16,18 +16,13 @@ namespace Note_V2
     {
         DatabaseService databaseService = new DatabaseService();
         int selectedPlayId;
-
-        //public TitlesFragment()
-        //{
-        //    // Being explicit about the requirement for a default constructor.
-        //}
-
+       
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
 
-            //var Title = databaseService.GetAllDates().ToList().Select(p => p.Title).ToArray();
-            //ListAdapter = new ArrayAdapter<String>(Activity, Android.Resource.Layout.SimpleListItemActivated1, Title);
+            var Title = databaseService.GetAllDates().ToList().Select(p => p.Title).ToArray();
+            ListAdapter = new ArrayAdapter(Activity, Android.Resource.Layout.SimpleListItemActivated1, Title);
 
             if (savedInstanceState != null)
             {

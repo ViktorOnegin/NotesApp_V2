@@ -5,17 +5,21 @@ using Android.Runtime;
 using Android.Widget;
 using Android.Views;
 using Android.Content;
+using SQLite;
 
 namespace Note_V2
 {
     [Activity(Label = "@string/app_name", Icon= "@drawable/Note", Theme = "@style/AppTheme")]
     public class MainActivity : Activity
     {
+        DatabaseService databaseService = new DatabaseService();
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+            databaseService.CreateTableWithDates();
 
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
@@ -37,6 +41,7 @@ namespace Note_V2
                         StartActivity(startActivity);
                         break;
                     }
+
                 default:
                     {
                         break;

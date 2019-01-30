@@ -2622,13 +2622,13 @@ namespace Note_V2
 			public const int menu_back = 2131230904;
 			
 			// aapt resource value: 0x7f0800b5
-			public const int menu_edit = 2131230901;
-			
-			// aapt resource value: 0x7f0800b7
-			public const int menu_preferences = 2131230903;
+			public const int menu_delete = 2131230901;
 			
 			// aapt resource value: 0x7f0800b6
 			public const int menu_save = 2131230902;
+			
+			// aapt resource value: 0x7f0800b7
+			public const int menu_update = 2131230903;
 			
 			// aapt resource value: 0x7f0800b1
 			public const int message = 2131230897;

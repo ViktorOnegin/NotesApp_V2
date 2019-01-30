@@ -17,6 +17,8 @@ namespace Note_V2
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            base.OnCreate(savedInstanceState);
+
             var playId = Intent.Extras.GetInt("current_play_id", 0);
 
             var detailsFrag = PlayNoteFragment.NewInstance(playId);

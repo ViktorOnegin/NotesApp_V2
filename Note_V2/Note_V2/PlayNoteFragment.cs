@@ -32,14 +32,14 @@ namespace Note_V2
                 return null;
             }
 
-            var textView = new TextView(Activity);
+            var editText = new EditText(Activity);
             var padding = Convert.ToInt32(TypedValue.ApplyDimension(ComplexUnitType.Dip, 4, Activity.Resources.DisplayMetrics));
-            textView.SetPadding(padding, padding, padding, padding);
-            textView.TextSize = 24;
-            //textView.Text = 
+            editText.SetPadding(padding, padding, padding, padding);
+            editText.TextSize = 20;
+            editText.Text = databaseService.GetAllDates().ElementAt(PlayId).Content; 
 
             var scroller = new ScrollView(Activity);
-            scroller.AddView(textView);
+            scroller.AddView(editText);
 
             return scroller;
         }

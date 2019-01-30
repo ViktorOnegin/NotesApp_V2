@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
 
 namespace Note_V2
 {
@@ -21,10 +22,10 @@ namespace Note_V2
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.addNotes);
-            //DatabaseService databaseService = new DatabaseService();
+            
+            databaseService.CreateDatabase();
+            //dates = JsonConvert.DeserializeObject<Dates>(Intent.GetStringExtra("dates"));
 
-            var Title = FindViewById<EditText>(Resource.Id.edit1);
-            var Content = FindViewById<EditText>(Resource.Id.edit2);
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
         }
@@ -42,7 +43,15 @@ namespace Note_V2
 
                 case Resource.Id.menu_add:
                     {
-                        
+                        Dates dates = new Dates();
+
+                        var Title = FindViewById<EditText>(Resource.Id.edit1);
+                        var Content = FindViewById<EditText>(Resource.Id.edit2);
+
+                        dates.Title = Title.Text;
+                        dates.Content = Title.Text;
+
+                        databaseService.Add(dates);
                         break;
                     }
                 case Resource.Id.menu_back:
