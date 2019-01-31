@@ -7,6 +7,11 @@ using Android.Views;
 using Android.Content;
 using SQLite;
 
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Distribute;
+
 namespace Note_V2
 {
     [Activity(Label = "", Icon= "@drawable/Note", Theme = "@style/AppTheme")]
@@ -18,8 +23,10 @@ namespace Note_V2
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+
+            AppCenter.Start("8e3e3e29-e523-4a16-a8a4-65a91bef0cfa", typeof(Analytics), typeof(Crashes), typeof(Distribute));
+
             databaseService.CreateTableWithDates();
 
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
