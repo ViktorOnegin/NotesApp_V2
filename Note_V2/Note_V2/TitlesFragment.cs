@@ -15,14 +15,23 @@ namespace Note_V2
     public class TitlesFragment : ListFragment
     {
         DatabaseService databaseService = new DatabaseService();
+        //Dates dates = new Dates();
         int selectedPlayId;
        
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
 
-            var Title = databaseService.GetAllDates().ToList().Select(p => p.Title).ToArray();
-            ListAdapter = new ArrayAdapter(Activity, Android.Resource.Layout.SimpleListItemActivated1, Title);
+            var notes = databaseService.GetAllDates();
+
+            List<string> items = new List<string>();
+            foreach (var note in notes)
+            {
+                items.Add(note.Title);
+            }
+
+            ListAdapter = new ArrayAdapter(Activity, Android.Resource.Layout.SimpleListItemActivated1, databaseService.GetAllDates().
+                ToList().Select(p => p.Content).ToArray());
 
             if (savedInstanceState != null)
             {

@@ -48,9 +48,9 @@ namespace Note_V2
                         var Content = FindViewById<EditText>(Resource.Id.edit2);
 
                         dates.Title = Title.Text;
-                        dates.Content = Title.Text;
+                        dates.Content = Content.Text;
 
-                        databaseService.Add(dates);
+                        databaseService.Add(dates.Title, dates.Content);
                         break;
                     }
                 case Resource.Id.menu_back:

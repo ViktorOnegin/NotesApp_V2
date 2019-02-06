@@ -33,22 +33,28 @@ namespace Note_V2
             if (db.Table<Dates>().Count() ==0)
             {
                 var dates = new Dates();
-                dates.Title = "TestTitle";
-                dates.Content = "TestContent";
+                dates.Title = "SimpleNotesApp";
+                dates.Content = "You can add, delete and edit notes. Hope you enjoy my app)";
                 db.Insert(dates);
             }
         }
-        public void Add(Dates dates)
+        public void Add(string title, string content)
         {
-            db.Insert(dates);
+            var add = new Dates
+            {
+                Title = title,
+                Content = content
+            };
         }
-        public void Delete(Dates dates)
+        public void Delete(int id)
         {
+            Dates dates = new Dates();
+            dates.ID = id;
             db.Delete(dates);
         }
-        public void Update(Dates dates)
+        public void Edit(int id, string content)
         {
-            db.Update(dates);
+
         }
         public TableQuery<Dates> GetAllDates()
         {

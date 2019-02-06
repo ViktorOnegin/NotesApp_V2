@@ -11,7 +11,7 @@
 		android:layout_height="54.5dp"
 		android:id="@+id/toolbar" />
   <EditText
-    android:text="Large Text"
+    android:text=""
     android:textAppearance="?android:attr/textAppearanceLarge"
     android:layout_width="match_parent"
     android:layout_height="58.0dp"
