@@ -49,10 +49,6 @@ namespace Note_V2
                         StartActivity(startActivity);
                         break;
                     }
-                case Resource.Id.menu_delete:
-                    {
-                        break;
-                    }
                 default:
                     {
                         //databaseService.Delete(dates);

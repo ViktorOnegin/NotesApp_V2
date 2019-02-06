@@ -34,15 +34,15 @@ namespace Note_V2
 
 
 
-            //var detailsFrag = PlayNoteFragment.NewInstance(playId);
-            //FragmentManager.BeginTransaction()
-            //                .Add(Android.Resource.Id.Content, detailsFrag)
-            //                .Commit();
+            var detailsFrag = PlayNoteFragment.NewInstance(playId);
+            FragmentManager.BeginTransaction()
+                            .Add(Android.Resource.Id.Content, detailsFrag)
+                            .Commit();
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.top_menus, menu);
+            MenuInflater.Inflate(Resource.Menu.top_menus3, menu);
             return base.OnCreateOptionsMenu(menu);
         }
     }

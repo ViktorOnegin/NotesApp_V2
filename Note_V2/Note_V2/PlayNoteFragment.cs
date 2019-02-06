@@ -35,11 +35,15 @@ namespace Note_V2
                 return null;
             }
 
+            var view = inflater.Inflate(Resource.Layout.MyNotes, null);
+
+            //var toolbar = view.FindViewById<Toolbar>(Resource.Id.toolbar);
+
             var editText = new EditText(Activity);
             var padding = Convert.ToInt32(TypedValue.ApplyDimension(ComplexUnitType.Dip, 4, Activity.Resources.DisplayMetrics));
             editText.SetPadding(padding, padding, padding, padding);
             editText.TextSize = 20;
-            editText.Text = databaseService.GetAllDates().ElementAt(PlayId).Content; 
+            editText.Text = databaseService.GetAllDates().ElementAt(PlayId).Content;
 
             var scroller = new ScrollView(Activity);
             scroller.AddView(editText);

@@ -31,7 +31,7 @@ namespace Note_V2
             }
 
             ListAdapter = new ArrayAdapter(Activity, Android.Resource.Layout.SimpleListItemActivated1, databaseService.GetAllDates().
-                ToList().Select(p => p.Content).ToArray());
+                ToList().Select(p => p.Title).ToArray());
 
             if (savedInstanceState != null)
             {
