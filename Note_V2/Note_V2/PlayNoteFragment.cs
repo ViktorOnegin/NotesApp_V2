@@ -39,16 +39,16 @@ namespace Note_V2
 
             //var toolbar = view.FindViewById<Toolbar>(Resource.Id.toolbar);
 
-            var editText = new EditText(Activity);
-            var padding = Convert.ToInt32(TypedValue.ApplyDimension(ComplexUnitType.Dip, 4, Activity.Resources.DisplayMetrics));
-            editText.SetPadding(padding, padding, padding, padding);
-            editText.TextSize = 20;
-            editText.Text = databaseService.GetAllDates().ElementAt(PlayId).Content;
+            //var editText = new EditText(Activity);
+            //var padding = Convert.ToInt32(TypedValue.ApplyDimension(ComplexUnitType.Dip, 4, Activity.Resources.DisplayMetrics));
+            //editText.SetPadding(padding, padding, padding, padding);
+            //editText.TextSize = 20;
+            //editText.Text = databaseService.GetAllDates().ElementAt(PlayId).Content;
 
-            var scroller = new ScrollView(Activity);
-            scroller.AddView(editText);
+            //var scroller = new ScrollView(Activity);
+            //scroller.AddView(editText);
 
-            return scroller;
+            return view;
         }
     }
 }
