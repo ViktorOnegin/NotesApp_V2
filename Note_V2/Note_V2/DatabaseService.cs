@@ -17,14 +17,11 @@ namespace Note_V2
     class DatabaseService
     {
         SQLiteConnection db;
-        public static List<Dates> DatesList { get; set; }
-        public static DatabaseService databaseService { get; set; }
 
         public DatabaseService()
         {
             CreateDatabase();
             CreateTableWithDates();
-            DatesList = GetAllDates().ToList();
         }
         public void CreateDatabase()
         {
@@ -59,7 +56,16 @@ namespace Note_V2
         }
         public void Edit(int id, string content)
         {
-
+            var getDates = GetAllDates();
+            var query = from ord in getDates
+                        where ord.ID == id
+                        select ord;
+            foreach(Dates dates in query)
+            {
+                dates.ID = id;
+                dates.Content = content;
+                db.Update(dates);
+            }
         }
         public TableQuery<Dates> GetAllDates()
         {

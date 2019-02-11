@@ -15,58 +15,20 @@ namespace Note_V2
     [Activity(Label = "", Theme = "@style/AppTheme")]
     public class PlayNoteActivity : Activity
     {
-        private int PlayId { get; set; }
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.MyNotes);
 
-            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-            SetActionBar(toolbar);
+            if (Resources.Configuration.Orientation == Android.Content.Res.Orientation.Landscape)
+            {
+                Finish();
+            }
 
-            var playId = Intent.Extras.GetInt("current_play_id", 0);
-
-            //var content = FindViewById<EditText>(Resource.Id.editText);
-            //content.Text = DatabaseService.DatesList[PlayId].Content;
-
-
-            var detailsFrag = PlayNoteFragment.NewInstance(playId);
+            var ViewId = Intent.Extras.GetInt("current_note_id", 0);
+            var detailsFrag = PlayNoteFragment.NewInstance(ViewId);
             FragmentManager.BeginTransaction()
                             .Add(Android.Resource.Id.Content, detailsFrag)
                             .Commit();
-        }
-
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.top_menus3, menu);
-            return base.OnCreateOptionsMenu(menu);
-        }
-
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            switch (item.ItemId)
-            {
-                case Resource.Id.save:
-                    {
-                        break;
-                    }
-                case Resource.Id.delete:
-                    {
-                        break;
-                    }
-                case Resource.Id.back:
-                    {
-                        var startActivity = new Intent(this, typeof(MainActivity));
-                        StartActivity(startActivity);
-                        break;
-                    }
-                default:
-                    {
-                        break;
-                    }
-            }
-            return base.OnOptionsItemSelected(item);
         }
     }
 }
