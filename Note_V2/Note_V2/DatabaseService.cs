@@ -17,15 +17,19 @@ namespace Note_V2
     class DatabaseService
     {
         SQLiteConnection db;
+        public static List<Dates> DatesList { get; set; }
+        public static DatabaseService databaseService { get; set; }
 
         public DatabaseService()
         {
-            string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "database.db3");
-            db = new SQLiteConnection(dbPath);
+            CreateDatabase();
+            CreateTableWithDates();
+            DatesList = GetAllDates().ToList();
         }
         public void CreateDatabase()
         {
-            db.CreateTable<Dates>();
+            string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "database.db3");
+            db = new SQLiteConnection(dbPath);
         }
         public void CreateTableWithDates()
         {
@@ -40,12 +44,12 @@ namespace Note_V2
         }
         public void Add(string title, string content)
         {
-            var note = new Dates
+            var addnote = new Dates
             {
                 Title = title,
                 Content = content
             };
-            db.Insert(note);
+            db.Insert(addnote);
         }
         public void Delete(int id)
         {

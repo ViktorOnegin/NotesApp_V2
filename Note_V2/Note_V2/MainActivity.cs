@@ -51,7 +51,6 @@ namespace Note_V2
                     }
                 default:
                     {
-                        //databaseService.Delete(dates);
                         break;
                     }
 

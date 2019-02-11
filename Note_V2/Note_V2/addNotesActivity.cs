@@ -44,11 +44,11 @@ namespace Note_V2
                     {
                         Dates dates = new Dates();
 
-                        var Title = FindViewById<EditText>(Resource.Id.edit1);
-                        var Content = FindViewById<EditText>(Resource.Id.edit2);
+                        var title = FindViewById<EditText>(Resource.Id.edit1);
+                        var content = FindViewById<EditText>(Resource.Id.edit2);
 
-                        dates.Title = Title.Text;
-                        dates.Content = Content.Text;
+                        dates.Title = title.Text;
+                        dates.Content = content.Text;
 
                         databaseService.Add(dates.Title, dates.Content);
                         break;

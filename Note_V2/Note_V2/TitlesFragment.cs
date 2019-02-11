@@ -15,7 +15,6 @@ namespace Note_V2
     public class TitlesFragment : ListFragment
     {
         DatabaseService databaseService = new DatabaseService();
-        //Dates dates = new Dates();
         int selectedPlayId;
        
         public override void OnActivityCreated(Bundle savedInstanceState)
@@ -32,6 +31,9 @@ namespace Note_V2
 
             ListAdapter = new ArrayAdapter(Activity, Android.Resource.Layout.SimpleListItemActivated1, databaseService.GetAllDates().
                 ToList().Select(p => p.Title).ToArray());
+
+            //databaseService = new DatabaseService();
+            //ListAdapter = new ArrayAdapter<String>(Activity, Android.Resource.Layout.SimpleListItemActivated1, databaseService.DatesList.Select(p => p.Title).ToArray());
 
             if (savedInstanceState != null)
             {

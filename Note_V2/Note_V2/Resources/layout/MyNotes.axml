@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
 	<Toolbar
 		android:minHeight="?android:attr/actionBarSize"
 		android:background="?android:attr/colorAccent"
@@ -17,5 +18,23 @@
 		android:layout_height="166.5dp"
 		android:id="@+id/editText"
 		android:layout_marginTop="2.5dp" />
+	<LinearLayout
+		android:orientation="horizontal"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout1" >
+		<Button
+			android:text="Edit"
+			android:layout_width="193.0dp"
+			android:layout_height="match_parent"
+			android:id="@+id/button1" />
+		<Button
+			android:text="Delete"
+			android:layout_width="187.5dp"
+			android:layout_height="match_parent"
+			android:id="@+id/button2" />                 
+	</LinearLayout>
 
 </LinearLayout>

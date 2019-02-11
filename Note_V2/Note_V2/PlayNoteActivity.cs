@@ -9,14 +9,12 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Android.Support.V7.App;
 
 namespace Note_V2
 {
     [Activity(Label = "", Theme = "@style/AppTheme")]
     public class PlayNoteActivity : Activity
     {
-        DatabaseService databaseService = new DatabaseService();
         private int PlayId { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -29,9 +27,8 @@ namespace Note_V2
 
             var playId = Intent.Extras.GetInt("current_play_id", 0);
 
-            var content = FindViewById<EditText>(Resource.Id.editText);
-            content.Text = databaseService.GetAllDates().ElementAt(PlayId).Content;
-
+            //var content = FindViewById<EditText>(Resource.Id.editText);
+            //content.Text = DatabaseService.DatesList[PlayId].Content;
 
 
             var detailsFrag = PlayNoteFragment.NewInstance(playId);
@@ -44,6 +41,32 @@ namespace Note_V2
         {
             MenuInflater.Inflate(Resource.Menu.top_menus3, menu);
             return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.save:
+                    {
+                        break;
+                    }
+                case Resource.Id.delete:
+                    {
+                        break;
+                    }
+                case Resource.Id.back:
+                    {
+                        var startActivity = new Intent(this, typeof(MainActivity));
+                        StartActivity(startActivity);
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+            }
+            return base.OnOptionsItemSelected(item);
         }
     }
 }
