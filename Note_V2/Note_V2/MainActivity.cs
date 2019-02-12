@@ -27,7 +27,7 @@ namespace Note_V2
 
             AppCenter.Start("8e3e3e29-e523-4a16-a8a4-65a91bef0cfa", typeof(Analytics), typeof(Crashes), typeof(Distribute));
 
-            databaseService.CreateTableWithDates();
+            databaseService.CreateTableWithDatas();
 
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);

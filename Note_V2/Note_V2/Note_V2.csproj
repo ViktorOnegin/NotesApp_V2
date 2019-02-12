@@ -64,7 +64,7 @@
   <ItemGroup>
     <Compile Include="addNotesActivity.cs" />
     <Compile Include="DatabaseService.cs" />
-    <Compile Include="Dates.cs" />
+    <Compile Include="Datas.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PlayNoteActivity.cs" />
     <Compile Include="PlayNoteFragment.cs" />

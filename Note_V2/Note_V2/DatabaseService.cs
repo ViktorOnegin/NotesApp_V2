@@ -21,19 +21,19 @@ namespace Note_V2
         public DatabaseService()
         {
             CreateDatabase();
-            CreateTableWithDates();
+            CreateTableWithDatas();
         }
         public void CreateDatabase()
         {
             string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "database.db3");
             db = new SQLiteConnection(dbPath);
         }
-        public void CreateTableWithDates()
+        public void CreateTableWithDatas()
         {
-            db.CreateTable<Dates>();
-            if (db.Table<Dates>().Count() ==0)
+            db.CreateTable<Datas>();
+            if (db.Table<Datas>().Count() ==0)
             {
-                var note = new Dates();
+                var note = new Datas();
                 note.Title = "SimpleNotesApp";
                 note.Content = "You can add, delete and edit notes. Hope you enjoy my app)";
                 db.Insert(note);
@@ -41,7 +41,7 @@ namespace Note_V2
         }
         public void Add(string title, string content)
         {
-            var addnote = new Dates
+            var addnote = new Datas
             {
                 Title = title,
                 Content = content
@@ -50,26 +50,26 @@ namespace Note_V2
         }
         public void Delete(int id)
         {
-            Dates note = new Dates();
+            Datas note = new Datas();
             note.ID = id;
             db.Delete(note);
         }
         public void Edit(int id, string content)
         {
-            var getDates = GetAllDates();
-            var query = from ord in getDates
-                        where ord.ID == id
-                        select ord;
-            foreach(Dates dates in query)
+            var getDatas = GetAllDatas();
+            var query = from note in getDatas
+                        where note.ID == id
+                        select note;
+            foreach(Datas datas in query)
             {
-                dates.ID = id;
-                dates.Content = content;
-                db.Update(dates);
+                datas.ID = id;
+                datas.Content = content;
+                db.Update(datas);
             }
         }
-        public TableQuery<Dates> GetAllDates()
+        public TableQuery<Datas> GetAllDatas()
         {
-            var table = db.Table<Dates>();
+            var table = db.Table<Datas>();
             return table;
         }
     }

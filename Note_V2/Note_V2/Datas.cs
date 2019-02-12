@@ -13,7 +13,7 @@ using SQLite;
 
 namespace Note_V2
 {
-    public class Dates
+    public class Datas
     {
         [PrimaryKey, AutoIncrement, Column("_ID")]
         public int ID { get; set; }

@@ -42,15 +42,15 @@ namespace Note_V2
 
                 case Resource.Id.menu_add:
                     {
-                        Datas dates = new Datas();
+                        Datas datas = new Datas();
 
                         var title = FindViewById<EditText>(Resource.Id.edit1);
                         var content = FindViewById<EditText>(Resource.Id.edit2);
 
-                        dates.Title = title.Text;
-                        dates.Content = content.Text;
+                        datas.Title = title.Text;
+                        datas.Content = content.Text;
 
-                        databaseService.Add(dates.Title, dates.Content);
+                        databaseService.Add(datas.Title, datas.Content);
                         break;
                     }
                 case Resource.Id.menu_back:

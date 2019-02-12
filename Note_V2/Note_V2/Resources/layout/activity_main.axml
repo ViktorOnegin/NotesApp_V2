@@ -21,12 +21,4 @@
 			android:layout_height="550.5dp"
 			android:id="@+id/fragment1" />
 	</LinearLayout>
-	<FrameLayout
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:layout_width="577.7dp"
-		android:layout_height="548.4dp"
-		android:layout_toRightOf="@id/linearLayout1"
-		android:id="@+id/note_container"
-		android:layout_marginTop="62.4dp" />
 </RelativeLayout>
