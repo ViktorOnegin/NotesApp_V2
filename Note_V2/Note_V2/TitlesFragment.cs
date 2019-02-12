@@ -15,14 +15,14 @@ namespace Note_V2
     public class TitlesFragment : ListFragment
     {
         DatabaseService databaseService = new DatabaseService();
-        int selectViewId;
+        int selectedPlayId;
         bool showingTwoFragments;
 
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
 
-            var notes = databaseService.GetAllDates();
+            var notes = databaseService.GetAllDatas();
 
             List<string> items = new List<string>();
             foreach (var note in notes)
@@ -30,8 +30,13 @@ namespace Note_V2
                 items.Add(note.Title);
             }
 
-            ListAdapter = new ArrayAdapter(Activity, Android.Resource.Layout.SimpleListItemActivated1, databaseService.GetAllDates().
+            ListAdapter = new ArrayAdapter(Activity, Android.Resource.Layout.SimpleListItemActivated1, databaseService.GetAllDatas().
                 ToList().Select(p => p.Title).ToArray());
+
+            if (savedInstanceState != null)
+            {
+                selectedPlayId = savedInstanceState.GetInt("current_note_id", 0);
+            }
 
             var notecontainer = Activity.FindViewById(Resource.Id.note_container);
             showingTwoFragments = notecontainer != null &&
@@ -39,19 +44,14 @@ namespace Note_V2
             if (showingTwoFragments)
             {
                 ListView.ChoiceMode = ChoiceMode.Single;
-                ShowNotes(selectViewId);
-            }
-
-            if (savedInstanceState != null)
-            {
-                selectViewId = savedInstanceState.GetInt("current_note_id", 0);
+                ShowNotes(selectedPlayId);
             }
         }
 
         public override void OnSaveInstanceState(Bundle outState)
         {
             base.OnSaveInstanceState(outState);
-            outState.PutInt("current_note_id", selectViewId);
+            outState.PutInt("current_note_id", selectedPlayId);
         }
 
         public override void OnListItemClick(ListView l, View v, int position, long id)
@@ -61,17 +61,17 @@ namespace Note_V2
 
         void ShowNotes(int ViewId)
         {
-            selectViewId = ViewId;
+            selectedPlayId = ViewId;
             if (showingTwoFragments)
             {
-                ListView.SetItemChecked(selectViewId, true);
+                ListView.SetItemChecked(selectedPlayId, true);
 
                 var NoteFragment = FragmentManager.FindFragmentById(Resource.Id.note_container) as PlayNoteFragment;
 
                 if (NoteFragment == null || NoteFragment.PlayId != ViewId)
                 {
                     var container = Activity.FindViewById(Resource.Id.note_container);
-                    var NoteFrag = PlayNoteFragment.NewInstance(selectViewId);
+                    var NoteFrag = PlayNoteFragment.NewInstance(selectedPlayId);
 
                     FragmentTransaction ft = FragmentManager.BeginTransaction();
                     ft.Replace(Resource.Id.note_container, NoteFrag);

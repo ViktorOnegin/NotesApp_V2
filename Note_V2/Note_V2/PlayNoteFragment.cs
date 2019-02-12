@@ -43,6 +43,8 @@ namespace Note_V2
             var editBtn = view.FindViewById<Button>(Resource.Id.edit);
             var deleteBtn = view.FindViewById<Button>(Resource.Id.delete);
             var content = view.FindViewById<EditText>(Resource.Id.content);
+            var Notes = databaseService.GetAllDatas().ToList();
+            content.Text = Notes.ElementAt(PlayId).Content;
 
             editBtn.Click += delegate
             {
@@ -51,11 +53,8 @@ namespace Note_V2
 
             deleteBtn.Click += delegate
             {
-                databaseService.Delete(databaseService.GetAllDates().ToList()[PlayId].ID);
+                databaseService.Delete(databaseService.GetAllDatas().ToList()[PlayId].ID);
             };
-
-            var Notes = databaseService.GetAllDates().ToList();
-            content.Text = Notes.ElementAt(PlayId).Content;
        
             return view;
         }

@@ -42,7 +42,7 @@ namespace Note_V2
 
                 case Resource.Id.menu_add:
                     {
-                        Dates dates = new Dates();
+                        Datas dates = new Datas();
 
                         var title = FindViewById<EditText>(Resource.Id.edit1);
                         var content = FindViewById<EditText>(Resource.Id.edit2);
