@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Note_V2
 {
-    [Activity(Label = "", Theme = "@style/AppTheme")]
+    [Activity()]
     public class PlayNoteActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

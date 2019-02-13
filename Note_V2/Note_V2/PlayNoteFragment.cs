@@ -49,13 +49,17 @@ namespace Note_V2
             editBtn.Click += delegate
             {
                 databaseService.Edit(PlayId + 1, content.Text);
+                var startActivity = new Intent(Activity, typeof(MainActivity));
+                StartActivity(startActivity);
             };
 
             deleteBtn.Click += delegate
             {
                 databaseService.Delete(databaseService.GetAllDatas().ToList()[PlayId].ID);
+                var startActivity = new Intent(Activity, typeof(MainActivity));
+                StartActivity(startActivity);
             };
-       
+
             return view;
         }
     }
