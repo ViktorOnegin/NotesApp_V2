@@ -5,7 +5,6 @@ using Android.Runtime;
 using Android.Widget;
 using Android.Views;
 using Android.Content;
-using SQLite;
 
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
@@ -14,7 +13,7 @@ using Microsoft.AppCenter.Distribute;
 
 namespace Note_V2
 {
-    [Activity(Label = "", Icon= "@drawable/Note", Theme = "@style/AppTheme")]
+    [Activity(Label = "", Icon = "@drawable/Note", Theme = "@style/AppTheme")]
     public class MainActivity : Activity
     {
         DatabaseService databaseService = new DatabaseService();
@@ -55,7 +54,8 @@ namespace Note_V2
                     }
 
             }
-
+            Toast.MakeText(this, "Action Selected: " + item.TitleFormatted,
+                ToastLength.Short).Show();
             return base.OnOptionsItemSelected(item);
         }
     }

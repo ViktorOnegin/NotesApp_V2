@@ -2451,8 +2451,8 @@ namespace Note_V2
 			// aapt resource value: 0x7f080044
 			public const int auto = 2131230788;
 			
-			// aapt resource value: 0x7f0800be
-			public const int back = 2131230910;
+			// aapt resource value: 0x7f0800bd
+			public const int back = 2131230909;
 			
 			// aapt resource value: 0x7f08002f
 			public const int beginning = 2131230767;
@@ -2658,9 +2658,6 @@ namespace Note_V2
 			// aapt resource value: 0x7f0800bb
 			public const int menu_add = 2131230907;
 			
-			// aapt resource value: 0x7f0800bc
-			public const int menu_update = 2131230908;
-			
 			// aapt resource value: 0x7f0800b8
 			public const int message = 2131230904;
 			
@@ -2727,8 +2724,8 @@ namespace Note_V2
 			// aapt resource value: 0x7f0800af
 			public const int right_side = 2131230895;
 			
-			// aapt resource value: 0x7f0800bd
-			public const int save = 2131230909;
+			// aapt resource value: 0x7f0800bc
+			public const int save = 2131230908;
 			
 			// aapt resource value: 0x7f08000c
 			public const int save_image_matrix = 2131230732;
@@ -3255,6 +3252,9 @@ namespace Note_V2
 			
 			// aapt resource value: 0x7f03000e
 			public const int ic_menu_search_holo_dark = 2130903054;
+			
+			// aapt resource value: 0x7f03000f
+			public const int Note = 2130903055;
 			
 			static Mipmap()
 			{
