@@ -5,8 +5,4 @@
        android:icon="@mipmap/baseline_note_add_white_48"
        android:showAsAction="always"
        android:title="add" />
-  <item
-       android:id="@+id/menu_update"
-       android:showAsAction="never"
-       android:title="update" />
 </menu>

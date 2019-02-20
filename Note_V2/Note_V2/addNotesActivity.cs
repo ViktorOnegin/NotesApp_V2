@@ -39,7 +39,7 @@ namespace Note_V2
         {
             switch (item.ItemId)
             {
-
+                
                 case Resource.Id.menu_add:
                     {
                         Datas datas = new Datas();
@@ -51,12 +51,10 @@ namespace Note_V2
                         datas.Content = content.Text;
 
                         databaseService.Add(datas.Title, datas.Content);
-                        break;
-                    }
-                case Resource.Id.menu_back:
-                    {
+
                         var startActivity = new Intent(this, typeof(MainActivity));
                         StartActivity(startActivity);
+
                         break;
                     }
                 default:
@@ -66,6 +64,8 @@ namespace Note_V2
 
             }
 
+            Toast.MakeText(this, "Action Selected: " + item.TitleFormatted,
+                ToastLength.Short).Show();
             return base.OnOptionsItemSelected(item);
         }
 
